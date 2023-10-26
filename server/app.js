@@ -1,7 +1,6 @@
 const express = require("express");
-const mongoose = require("mongoose");
-const path = require("path");
 const app = express();
+const path = require("path");
 const booksRoutes = require("./routes/books.routes");
 const userRoutes = require("./routes/users.routes");
 
@@ -28,7 +27,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 //Import des routes
-app.use("/api/stuff", booksRoutes);
+app.use("/api/books", booksRoutes);
 app.use("/api/auth", userRoutes);
 app.use("/images", express.static(path.join(__dirname, "images")));
 
