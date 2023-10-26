@@ -1,14 +1,14 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-const User = require("../models/User");
+const userModel = require("../models/users.model");
 
 //Fonction permettant l'inscription de l'utilisateur
 module.exports.signUpUser = (req, res, next) => {
   bcrypt
     .hash(req.body.password, 10)
     .then((hash) => {
-      const user = new User({
+      const user = new userModel({
         email: req.body.email,
         password: hash,
       });
@@ -22,7 +22,8 @@ module.exports.signUpUser = (req, res, next) => {
 
 //Fonction permettant la connexion de l'utilisateur
 module.exports.logInUser = (req, res, next) => {
-  User.findOne({ email: req.body.email })
+  userModel
+    .findOne({ email: req.body.email })
     .then((user) => {
       if (user === null) {
         res
@@ -43,7 +44,7 @@ module.exports.logInUser = (req, res, next) => {
                   {
                     userId: user._id,
                   },
-                  "foo",
+                  process.env.TOKEN,
                   { expiresIn: "24h" }
                 ),
               });
