@@ -24,7 +24,7 @@ exports.addBook = (req, res, next) => {
     });
 };
 
-//Modifie un objet
+//Modifie un livre dans la DB
 exports.updateBook = (req, res, next) => {
   const updateBookOnList = req.file
     ? {
@@ -56,7 +56,7 @@ exports.updateBook = (req, res, next) => {
     });
 };
 
-//Supprime un objet
+//Supprime un livre de la DB
 exports.deleteBook = (req, res, next) => {
   bookModel
     .findOne({ _id: req.params._id })
@@ -80,7 +80,7 @@ exports.deleteBook = (req, res, next) => {
     });
 };
 
-//Récupérer un objet dans la DB
+//Récupérer un livre dans la DB
 exports.getOneBook = (req, res, next) => {
   bookModel
     .findOne({ _id: req.params.id })
@@ -108,7 +108,7 @@ module.exports.bestBooks = async (req, res) => {
   }
 };
 
-//Récupérer tous les objets de la DB
+//Récupérer tous les livre de la DB
 exports.getAllBooks = (req, res, next) => {
   bookModel
     .find()
