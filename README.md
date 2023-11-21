@@ -1,5 +1,9 @@
-# P7Projet
+# Backend créer en NodeJs
 
-## Mon vieux Grimoire est une petite librairie qui souhaite ouvrir un site de référencement de notation de livres.
+## Création du back-end d'un site de notation de livres
+Utilisation de NodeJS pour créer les points de terminaisons, ainsi que de JWT pour protèger les routes.
 
-### Le code comprend la partie Front-End ainsi que la partie Back-End développé en NodeJs
+Lien du front-end: https://huguesctrl.github.io/ProjetSophieBluel/ <br/>
+Lien du back-end: https://github.com/HuguesCtrl/BackEndSophieBluel  <br/>
+***Pour démarrer le front-end se placer dans VSCode et lancer-le avec npm install et npm start***
+***Pour démarrer le back-end se placer dans VSCode et lancer-le avec npm install et npm run dev***
